@@ -100,9 +100,9 @@
 " Vim UI {
 	colorscheme solarized   	       		" load a colorscheme
 	" set tabpagemax=15 				" only show 15 tabs
-	" set showmode                   	" display the current mode
+	set showmode                   	" display the current mode
 	" set t_Co=256					" forces 256 color
-	set cursorline  				" highlight current line
+	" set cursorline  				" highlight current line
 	" hi cursorline guibg=#333333 	" highlight bg color of current line
 	" hi CursorColumn guibg=#333333   " highlight cursor
 
