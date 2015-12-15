@@ -59,6 +59,15 @@
 	" NERDTree
 	Plugin 'scrooloose/nerdTree'
 
+	" ctrlp
+	Plugin 'kien/ctrlp.vim'
+
+	" Surround
+	" Plugin 'tpope/vim-surround'
+
+	" Fugitive
+	" Plugin 'tpope/vim-fugitive'
+
 	" All of your Plugins must be added before the following line
 	call vundle#end()            " required
 	filetype plugin indent on    " required
