@@ -14,7 +14,7 @@ function pauseQuit
     exit
 }
 
-## Make directories
+## Make dev directories
 $devdir = join-path $HOME dev
 $toolsdir = join-path $devdir tools
 mkdir $devdir
@@ -23,7 +23,7 @@ mkdir $toolsdir
 
 ## Main Program
 $dir = get-item (split-path -parent $MyInvocation.MyCommand.Path)
-$files = @(".bash_profile",".bashrc",".bash_aliases",".inputrc",".ctags",".gitconfig",".ghci", ".vimrc", ".vim", "dev\tools\ConEmu.xml")
+$files = @(".bash_profile",".bashrc",".bash_aliases",".inputrc",".ctags",".gitconfig",".ghci", ".vimrc", ".vim", "dev\tools\ConEmu.xml", ".atom\config.cson", ".atom\init.coffee", ".atom\keymap.cson", ".atom\snippets.cson", ".atom\styles.less")
 $olddir = join-path $HOME .dotfiles_old
 
 # create dotfiles_old in home dir
@@ -46,11 +46,23 @@ write-host "copying files.."
 # symlink files
 write-host "symlinking dotfiles"
 # cmd /c mklink "$HOME\filename" "$dir\pathtofile"
+# git stuff
 cmd /c mklink "$HOME\.gitconfig" "$dir\git\.gitconfig"
+
+# vim stuff
 cmd /c mklink "$HOME\.vimrc" "$dir\vim\.vimrc"
 cmd /c mklink /J "$HOME\.vim" "$dir\vim\.vim"
 # cmd /c mklink "$HOME\.bashrc" "$dir\windows\.bashrc"
+
+# ConEmu stuff
 cmd /c mklink "$toolsdir\ConEmu.xml" "$dir\windows\ConEmu.xml"
+
+# atom stuff
+cmd /c mklink "$HOME\.atom\config.cson" "$dir\atom\config.cson"
+cmd /c mklink "$HOME\.atom\init.coffee" "$dir\atom\init.coffee"
+cmd /c mklink "$HOME\.atom\keymap.cson" "$dir\atom\keymap.cson"
+cmd /c mklink "$HOME\.atom\snippets.cson" "$dir\atom\snippets.cson"
+cmd /c mklink "$HOME\.atom\styles.less" "$dir\atom\styles.less"
 
 #foreach ($file in $files) {
 #    cmd /c mklink "$HOME\.$file" "$dir\$file"

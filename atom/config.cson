@@ -1,0 +1,25 @@
+"*":
+  "exception-reporting":
+    userId: "75d380b7-790c-6e91-499b-2105a266b4e9"
+  welcome:
+    showOnStartup: false
+  core:
+    disabledPackages: [
+      "vim-mode"
+    ]
+  editor:
+    invisibles: {}
+    showIndentGuide: true
+    softWrap: true
+  latex:
+    texPath: "C:\\Program Files (x86)\\MiKTeX 2.9\\miktex\\bin"
+  "activate-power-mode":
+    particles:
+      size: {}
+      spawnCount: {}
+      totalCount: {}
+    screenShake: {}
+  "atom-typescript": {}
+  minimap:
+    plugins:
+      "highlight-selected": true
