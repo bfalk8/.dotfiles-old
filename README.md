@@ -19,11 +19,6 @@ Run these commands in powershell
 - `iex (new-object net.webclient).downloadstring('https://get.scoop.sh')`
 - `scoop install 7zip concfg curl grep python python27 sudo touch vim wget`
 
-## install ConEmu
-Download portable version from [ConEmu](http://conemu.github.io/)
-- unzip portable version in ~/dev/tools
-- set ConEmu.xml to be located in ~/dev/tools
-
 ## clone the repo and install
 - `cd` into your home directory
 - `git clone https://github.com/bfalk8/.dotfiles.git`
@@ -32,6 +27,18 @@ Download portable version from [ConEmu](http://conemu.github.io/)
 - `git submodule update`
 - `./windows-init.ps1`
 
+## install ConEmu
+Download portable version from [ConEmu](http://conemu.github.io/)
+- unzip portable version in ~/dev/tools
+- set ConEmu.xml to be located in ~/dev/tools
+
 # Post-Init
 # vim
 open vim and run `:PluginInstall`
+
+# atom
+- `cd ~/.dotfiles/atom`
+- `apm install --packages-file my-atom-packages.txt`
+if you add to the packages list...
+- `apm list --installed --bare | grep '^[^@]\+' -o > my-atom-packages.txt`
+- remove hidden characters at the beginning of file
