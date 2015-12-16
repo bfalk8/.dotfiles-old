@@ -95,9 +95,9 @@
 
 " General {
 	set background=dark         " Assume a dark background
-    " if !has('win32') && !has('win64')
+    if !has('win32') && !has('win64')
         set term=$TERM       " Make arrow and other keys work
-    " endif
+    endif
 	filetype plugin indent on  	" Automatically detect file types.
 	syntax on 					" syntax highlighting
 	" set mouse=a					" automatically enable mouse usage
@@ -156,9 +156,9 @@
 									" selected characters/lines in visual mode
 	" endif
 
-	" ┏━┓╺┳╸┏━┓╺┳╸╻ ╻┏━┓╻  ╻┏┓╻┏━╸
-  " ┗━┓ ┃ ┣━┫ ┃ ┃ ┃┗━┓┃  ┃┃┗┫┣╸ 
-  " ┗━┛ ╹ ╹ ╹ ╹ ┗━┛┗━┛┗━╸╹╹ ╹┗━╸
+    " ┏━┓╺┳╸┏━┓╺┳╸╻ ╻┏━┓╻  ╻┏┓╻┏━╸
+    " ┗━┓ ┃ ┣━┫ ┃ ┃ ┃┗━┓┃  ┃┃┗┫┣╸ 
+    " ┗━┛ ╹ ╹ ╹ ╹ ┗━┛┗━┛┗━╸╹╹ ╹┗━╸
   
 	" if has('statusline')
         " set laststatus=2
