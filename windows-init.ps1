@@ -23,19 +23,19 @@ mkdir $toolsdir
 
 ## Main Program
 $dir = get-item (split-path -parent $MyInvocation.MyCommand.Path)
-$files = @("bash_profile","bashrc","bash_aliases","inputrc","ctags","gitconfig","ghci", "vimrc", "vim")
+$files = @(".bash_profile",".bashrc",".bash_aliases",".inputrc",".ctags",".gitconfig",".ghci", ".vimrc", ".vim", "dev\tools\ConEmu.xml")
 $olddir = join-path $HOME .dotfiles_old
 
 # create dotfiles_old in home dir
 mkdir $olddir -Force > null
 
-# move any existing dotfiles in homedir to dotfiles_old directory, then create 
-# symlinks from the homedir to any files in the ~/.dotfiles directory specified 
+# move any existing dotfiles in homedir to dotfiles_old directory, then create
+# symlinks from the homedir to any files in the ~/.dotfiles directory specified
 # in $files
 write-host "Moving any existing dotfiles from $HOME to $olddir"
 foreach ($file in $files) {
-    if (test-path $HOME\.$file) {
-        move-item $HOME\.$file $olddir
+    if (test-path $HOME\$file) {
+        move-item $HOME\$file $olddir
     }
 }
 
