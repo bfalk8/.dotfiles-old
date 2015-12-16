@@ -48,7 +48,7 @@ write-host "symlinking dotfiles"
 # cmd /c mklink "$HOME\filename" "$dir\pathtofile"
 cmd /c mklink "$HOME\.gitconfig" "$dir\git\.gitconfig"
 cmd /c mklink "$HOME\.vimrc" "$dir\vim\.vimrc"
-cmd /c mklink "$HOME\.vim" "$dir\vim\.vim"
+cmd /c mklink /J "$HOME\.vim" "$dir\vim\.vim"
 # cmd /c mklink "$HOME\.bashrc" "$dir\windows\.bashrc"
 cmd /c mklink "$toolsdir\ConEmu.xml" "$dir\windows\ConEmu.xml"
 
