@@ -46,8 +46,15 @@
 	filetype off                  " required
 
 	" set the runtime path to include Vundle and initialize
-	set rtp+=~/.vim/bundle/Vundle.vim
-	call vundle#begin()
+	if has('win32') || has('win64')
+        set rtp+=$HOME/.vim/bundle/Vundle.vim/
+        call vundle#begin('$HOME/.vim/bundle/')
+        set shell=powershell
+        set shellcmdflag=-command
+    else
+        set rtp+=~/.vim/bundle/Vundle.vim
+	    call vundle#begin()
+    endif
 	" alternatively, pass a path where Vundle should install plugins
 	"call vundle#begin('~/some/path/here')
 
@@ -88,9 +95,9 @@
 
 " General {
 	set background=dark         " Assume a dark background
-    if !has('win32') && !has('win64')
+    " if !has('win32') && !has('win64')
         set term=$TERM       " Make arrow and other keys work
-    endif
+    " endif
 	filetype plugin indent on  	" Automatically detect file types.
 	syntax on 					" syntax highlighting
 	" set mouse=a					" automatically enable mouse usage
@@ -131,8 +138,11 @@
 " ╹╹ ╹ ╹ ┗━╸╹┗╸╹  ╹ ╹┗━╸┗━╸
 
 " Vim UI {
-	colorscheme solarized   	       		" load a colorscheme
-	" set tabpagemax=15 				" only show 15 tabs
+
+    if !has('win32') && !has('win64')
+	    colorscheme solarized   	       		" load a colorscheme
+    endif
+    " set tabpagemax=15 				" only show 15 tabs
 	set showmode                   	" display the current mode
 	" set t_Co=256					" forces 256 color
 	" set cursorline  				" highlight current line
