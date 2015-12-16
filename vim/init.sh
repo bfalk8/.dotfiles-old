@@ -14,9 +14,7 @@ die() {
 echo "backing up current vim config\n"
 for i in ~/.vim ~/.vimrc ~/.gvimrc; do [ -e $i ] && mv $i $i.old; done
 
-
-# echo "cloning spf13-vim\n"
-# git clone --recursive git://github.com/spf13/spf13-vim.git ~/.spf13-vim 
+# Linking vim to dotfiles
 echo "linking vim to .dotfiles"
 ln -s ~/.dotfiles/vim/.vimrc ~/.vimrc
 ln -s ~/.dotfiles/vim/.vim ~/.vim
