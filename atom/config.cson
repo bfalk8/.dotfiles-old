@@ -6,6 +6,7 @@
   core:
     disabledPackages: [
       "vim-mode"
+      "emmet"
     ]
   editor:
     invisibles: {}

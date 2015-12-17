@@ -39,6 +39,6 @@ open vim and run `:PluginInstall`
 # atom
 - `cd ~/.dotfiles/atom`
 - `apm install --packages-file my-atom-packages.txt`
+
 if you add to the packages list...
-- `apm list --installed --bare | grep '^[^@]\+' -o > my-atom-packages.txt`
-- remove hidden characters at the beginning of file
+- `apm list --installed --bare > my-atom-packages.txt`
