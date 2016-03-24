@@ -1,19 +1,4 @@
 "*":
-  "exception-reporting":
-    userId: "75d380b7-790c-6e91-499b-2105a266b4e9"
-  welcome:
-    showOnStartup: false
-  core:
-    disabledPackages: [
-      "vim-mode"
-      "emmet"
-    ]
-  editor:
-    invisibles: {}
-    showIndentGuide: true
-    softWrap: true
-  latex:
-    texPath: "C:\\Program Files (x86)\\MiKTeX 2.9\\miktex\\bin"
   "activate-power-mode":
     particles:
       size: {}
@@ -21,6 +6,34 @@
       totalCount: {}
     screenShake: {}
   "atom-typescript": {}
+  core:
+    autoHideMenuBar: true
+    disabledPackages: [
+      "language-ocaml"
+      "language-haskell"
+      "activate-power-mode"
+      "minimap"
+      "minimap-highlight-selected"
+      "pigments"
+    ]
+  editor:
+    invisibles: {}
+    showIndentGuide: true
+    softWrap: true
+  emmet: {}
+  "exception-reporting":
+    userId: "75d380b7-790c-6e91-499b-2105a266b4e9"
+  "highlight-selected": {}
+  latex:
+    texPath: "C:\\Program Files (x86)\\MiKTeX 2.9\\miktex\\bin"
+  linter: {}
+  "merge-conflicts": {}
   minimap:
     plugins:
       "highlight-selected": true
+      "highlight-selectedDecorationsZIndex": 0
+  pigments: {}
+  "todo-show": {}
+  "vim-mode": {}
+  welcome:
+    showOnStartup: false

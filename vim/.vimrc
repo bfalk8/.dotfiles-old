@@ -64,7 +64,7 @@
 	" Plugins here
 
 	" NERDTree
-	Plugin 'scrooloose/nerdTree'
+	" Plugin 'scrooloose/nerdTree'
 
 	" ctrlp
 	Plugin 'kien/ctrlp.vim'
@@ -74,6 +74,12 @@
 
 	" Fugitive
 	" Plugin 'tpope/vim-fugitive'
+
+	" TypeScript
+	Plugin 'leafgarland/typescript-vim'
+
+	" Emmet
+	Plugin 'mattn/emmet-vim'
 
 	" All of your Plugins must be added before the following line
 	call vundle#end()            " required
@@ -112,7 +118,7 @@
 	set viewoptions=folds,options,cursor,unix,slash " better unix / windows compatibility
 	" set virtualedit=onemore 	   	" allow for cursor beyond last character
 	" set history=1000  				" Store a ton of history (default is 20)
-	set spell 		 	        	" spell checking on
+	" set spell 		 	        	" spell checking on
 	
 	" Setting up the directories {
 		set backup 						" backups are nice ...
@@ -288,13 +294,30 @@
 
 " GUI Settings {
 	" GVIM- (here instead of .gvimrc)
-	" if has('gui_running')
+	if has('gui_running')
 		" set guioptions-=T          	" remove the toolbar
-		" set lines=40               	" 40 lines of text instead of 24,
+		set lines=40               	" 40 lines of text instead of 24,
+		set columns=120
+		set guioptions-=m  "remove menu bar
+		set guioptions-=T  "remove toolbar
+		set guioptions-=r  "remove right-hand scroll bar
+		set guioptions-=L  "remove left-hand scroll bar
+		set guifont=Consolas:h13	" Uncomment on high-DPI screens
+		colorscheme badwolf		" Colorscheme for gVim
+		" FULLSCREEN
+		"run the command immediately when starting vim
+		" autocmd VimEnter * call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)
+
+		" activate/deactivate full screen with function key <F11>  
+		map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 1)<CR>
 	" else
 		" set term=builtin_ansi       " Make arrow and other keys work
-	" endif
+	endif 	" End of GUI stuff
 " }
+
+
+
+" FILE INIT
 
 function! InitializeDirectories()
   let separator = "."
@@ -341,3 +364,6 @@ endfunction
         " source ~/.vimrc.local
     " endif
 " }
+
+:set fileformats=unix,dos
+:set fileformat=unix
