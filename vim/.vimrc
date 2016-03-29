@@ -32,15 +32,15 @@
 
 	" Windows Compatible {
 		" On Windows, also use '.vim' instead of 'vimfiles'; this makes synchronization
-		" across (heterogeneous) systems easier. 
+		" across (heterogeneous) systems easier.
 		if has('win32') || has('win64')
 		  set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
 		endif
 	" }
 
 " ┏━┓╻  ╻ ╻┏━╸╻┏┓╻   ┏━┓╺┳╸╻ ╻┏━╸┏━╸
-" ┣━┛┃  ┃ ┃┃╺┓┃┃┗┫   ┗━┓ ┃ ┃ ┃┣╸ ┣╸ 
-" ╹  ┗━╸┗━┛┗━┛╹╹ ╹   ┗━┛ ╹ ┗━┛╹  ╹  
+" ┣━┛┃  ┃ ┃┃╺┓┃┃┗┫   ┗━┓ ┃ ┃ ┃┣╸ ┣╸
+" ╹  ┗━╸┗━┛┗━┛╹╹ ╹   ┗━┛ ╹ ┗━┛╹  ╹
 
 	" Setup Vundle Support {
 	filetype off                  " required
@@ -119,7 +119,7 @@
 	" set virtualedit=onemore 	   	" allow for cursor beyond last character
 	" set history=1000  				" Store a ton of history (default is 20)
 	" set spell 		 	        	" spell checking on
-	
+
 	" Setting up the directories {
 		set backup 						" backups are nice ...
 		set undofile					" so is persistent undo ...
@@ -129,7 +129,7 @@
 		"set backupdir=$HOME/.vimbackup//  " but not when they clog .
 		"set directory=$HOME/.vimswap// 	" Same for swap files
 		"set viewdir=$HOME/.vimviews// 	" same for view files
-		
+
 		"" Creating directories if they don't exist
 		"silent execute '!mkdir -p $HVOME/.vimbackup'
 		"silent execute '!mkdir -p $HOME/.vimswap'
@@ -140,7 +140,7 @@
 " }
 
 " ╻┏┓╻╺┳╸┏━╸┏━┓┏━╸┏━┓┏━╸┏━╸
-" ┃┃┗┫ ┃ ┣╸ ┣┳┛┣╸ ┣━┫┃  ┣╸ 
+" ┃┃┗┫ ┃ ┣╸ ┣┳┛┣╸ ┣━┫┃  ┣╸
 " ╹╹ ╹ ╹ ┗━╸╹┗╸╹  ╹ ╹┗━╸┗━╸
 
 " Vim UI {
@@ -163,9 +163,9 @@
 	" endif
 
     " ┏━┓╺┳╸┏━┓╺┳╸╻ ╻┏━┓╻  ╻┏┓╻┏━╸
-    " ┗━┓ ┃ ┣━┫ ┃ ┃ ┃┗━┓┃  ┃┃┗┫┣╸ 
+    " ┗━┓ ┃ ┣━┫ ┃ ┃ ┃┗━┓┃  ┃┃┗┫┣╸
     " ┗━┛ ╹ ╹ ╹ ╹ ┗━┛┗━┛┗━╸╹╹ ╹┗━╸
-  
+
 	" if has('statusline')
         " set laststatus=2
 
@@ -185,7 +185,7 @@
 	set showmatch					" show matching brackets/parenthesis
 	set incsearch					" find as you type search
 	set hlsearch					" highlight search terms
-	" set winminheight=0				" windows can be 0 line high 
+	" set winminheight=0				" windows can be 0 line high
 	set ignorecase					" case insensitive search
 	set smartcase					" case sensitive when uc present
 	set wildmenu					" show list instead of just completing
@@ -204,11 +204,11 @@
 " Formatting {
 	set nowrap                     	" wrap long lines
 	set autoindent                 	" indent at the same level of the previous line
-	set shiftwidth=4               	" use indents of 4 spaces
+	set shiftwidth=2               	" use indents of 4 spaces
 	set expandtab 	  	     		" tabs are spaces, not tabs
-	set tabstop=4 					" an indentation every four columns
-	set softtabstop=4 				" let backspace delete indent
-	"set matchpairs+=<:>            	" match, to be used with % 
+	set tabstop=2 					" an indentation every four columns
+	set softtabstop=2 				" let backspace delete indent
+	"set matchpairs+=<:>            	" match, to be used with %
 	" set pastetoggle=<F12>          	" pastetoggle (sane indentation on pastes)
 	"set comments=sl:/*,mb:*,elx:*/  " auto format comment blocks
 	" Remove trailing whitespaces and ^M chars
@@ -235,7 +235,7 @@
 	" map <C-K> <C-W>k<C-W>_
 	" map <C-L> <C-W>l<C-W>_
 	" map <C-H> <C-W>h<C-W>_
-	
+
     " Wrapped lines goes down/up to next row, rather than next line in file.
     " nnoremap j gj
     " nnoremap k gk
@@ -243,11 +243,11 @@
 	" The following two lines conflict with moving to top and bottom of the
 	" screen
 	" If you prefer that functionality, comment them out.
-	" map <S-H> gT          
+	" map <S-H> gT
 	" map <S-L> gt
 
 	" Stupid shift key fixes
-	" cmap W w 						
+	" cmap W w
 	" cmap WQ wq
 	" cmap wQ wq
 	" cmap Q q
@@ -255,7 +255,7 @@
 
 	" Yank from the cursor to the end of the line, to be consistent with C and D.
 	" nnoremap Y y$
-		
+
 	""" Code folding options
 	" nmap <leader>f0 :set foldlevel=0<CR>
 	" nmap <leader>f1 :set foldlevel=1<CR>
@@ -278,7 +278,7 @@
 
 	" visual shifting (does not exit Visual mode)
 	" vnoremap < <gv
-	" vnoremap > >gv 
+	" vnoremap > >gv
 
 	" Fix home and end keybindings for screen, particularly on mac
 	" - for some reason this fixes the arrow keys too. huh.
@@ -286,7 +286,7 @@
 	" imap [F $
 	" map [H g0
 	" imap [H g0
-		
+
 	" For when you forget to sudo.. Really Write the file.
 	" cmap w!! w !sudo tee % >/dev/null
 " }
@@ -308,7 +308,7 @@
 		"run the command immediately when starting vim
 		" autocmd VimEnter * call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)
 
-		" activate/deactivate full screen with function key <F11>  
+		" activate/deactivate full screen with function key <F11>
 		map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 1)<CR>
 	" else
 		" set term=builtin_ansi       " Make arrow and other keys work
@@ -321,12 +321,12 @@
 
 function! InitializeDirectories()
   let separator = "."
-  let parent = $HOME 
+  let parent = $HOME
   let prefix = '.vim'
-  let dir_list = { 
-			  \ 'backup': 'backupdir', 
-			  \ 'views': 'viewdir', 
-			  \ 'swap': 'directory', 
+  let dir_list = {
+			  \ 'backup': 'backupdir',
+			  \ 'views': 'viewdir',
+			  \ 'swap': 'directory',
 			  \ 'undo': 'undodir' }
 
   for [dirname, settingname] in items(dir_list)
@@ -339,13 +339,13 @@ function! InitializeDirectories()
 	  if !isdirectory(directory)
 		  echo "Warning: Unable to create backup directory: " . directory
 		  echo "Try: mkdir -p " . directory
-	  else  
+	  else
           let directory = substitute(directory, " ", "\\\\ ", "")
           exec "set " . settingname . "=" . directory
 	  endif
   endfor
 endfunction
-call InitializeDirectories() 
+call InitializeDirectories()
 
 function! NERDTreeInitAsNeeded()
     redir => bufoutput
