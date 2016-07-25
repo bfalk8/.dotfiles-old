@@ -9,7 +9,7 @@
 "
 "  ▓▓▓▓▓▓▓▓▓▓
 " ░▓ author ▓ bfalk8 <bfalk@ucsd.edu>
-" ░▓ code   ▓ http://code.xero.nu/dotfiles
+" ░▓ code   ▓ http://github.com/bfalk8/.dotfiles
 " ░▓ mirror ▓ http://git.io/.files
 " ░▓▓▓▓▓▓▓▓▓▓
 " ░░░░░░░░░░
@@ -17,11 +17,6 @@
 " Modeline and Notes {
 " vim: set foldmarker={,} foldlevel=0 foldmethod=marker spell:
 "
-"	This is the personal .vimrc file of Steve Francia.
-"	While much of it is beneficial for general use, I would
-"	recommend picking out the parts you want and understand.
-"
-"	You can find me at http://spf13.com
 " }
 
 " Environment {
@@ -76,10 +71,10 @@
 	" Plugin 'tpope/vim-fugitive'
 
 	" TypeScript
-	Plugin 'leafgarland/typescript-vim'
+	" Plugin 'leafgarland/typescript-vim'
 
 	" Emmet
-	Plugin 'mattn/emmet-vim'
+	" Plugin 'mattn/emmet-vim'
 
 	" All of your Plugins must be added before the following line
 	call vundle#end()            " required
@@ -146,7 +141,7 @@
 " Vim UI {
 
     if !has('win32') && !has('win64')
-	    colorscheme solarized   	       		" load a colorscheme
+	    colorscheme badwolf    		" load a colorscheme
     endif
     " set tabpagemax=15 				" only show 15 tabs
 	set showmode                   	" display the current mode
