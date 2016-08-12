@@ -173,7 +173,8 @@
 		"set statusline+=\ [A=\%03.3b/H=\%02.2B] " ASCII / Hexadecimal value of char
 		" set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
 	" endif
-
+  set noerrorbells visualbell t_vb=
+  autocmd GUIEnter * set visualbell t_vb=
 	set backspace=indent,eol,start	" backspace for dummys
 	set linespace=0					" No extra spaces between rows
 	set nu							" Line numbers on
