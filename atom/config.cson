@@ -18,10 +18,19 @@
       "language-latex"
       "latex"
       "emmet"
-      "ex-mode"
-      "vim-mode"
+    ]
+    ignoredNames: [
+      ".git"
+      ".hg"
+      ".svn"
+      ".DS_Store"
+      "._*"
+      "Thumbs.db"
+      "*.cs.meta"
+      "*.meta"
     ]
   editor:
+    fontSize: 16
     invisibles: {}
     showIndentGuide: true
     softWrap: true
@@ -43,12 +52,14 @@
   pigments: {}
   "sync-settings":
     _analyticsUserId: "d6079385-8772-4b12-8653-c5ffa87dc3bd"
-    _lastBackupHash: "f759d569f5ed0a454967b4979dbef15e6b19c091"
+    _lastBackupHash: "6885aab576f9b91092903c71373c3120dfd0aebd"
     gistDescription: "Used by atom to sync settings"
     gistId: "68ac842fd946078a074b3060e83bddd3"
     personalAccessToken: "27f6820f95fab25bf48eafa3eaec823edddba710"
     syncStyles: false
   "todo-show": {}
+  "tree-view":
+    hideIgnoredNames: true
   "vim-mode": {}
   welcome:
     showOnStartup: false
