@@ -1,0 +1,30 @@
+# Created by newuser for 5.1.1
+
+export ZSH="$HOME/.oh-my-zsh";
+ZSH_THEME="clean"
+plugins=(git)
+
+
+# want your terminal to support 256 color schemes? I do ...
+export TERM="xterm-256color"
+
+# if you do a 'rm *', Zsh will give you a sanity check!
+setopt RM_STAR_WAIT
+
+# allows you to type Bash style comments on your command line
+# good 'ol Bash
+setopt interactivecomments
+
+# Zsh has a spelling corrector
+setopt CORRECT
+
+# make sure that if a program wants you to edit
+# text, that Vim is going to be there for you
+export EDITOR="vim"
+export USE_EDITOR=$EDITOR
+export VISUAL=$EDITOR
+
+#start oh-my-zsh
+source $ZSH/oh-my-zsh.sh
+# ooh, what is this? Aliases?
+source .oh-my-zsh/lib/alias.zsh
