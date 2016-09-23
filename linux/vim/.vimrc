@@ -1,5 +1,3 @@
-" Environment {
-	" Basics {
 		set nocompatible 		" must be first line
 		set background=dark     " Assume a dark background
 	" }
@@ -11,7 +9,9 @@
 		" Make sure you use single quotes
 		" Always Loaded
         Plug 'christoomey/vim-tmux-navigator'
-		Plug 'kien/ctrlp.vim'
+		Plug 'ctrlpvim/ctrlp.vim'
+        "Plug 'Shougo/unite.vim'
+        "Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 		Plug 'tpope/vim-fugitive'
 		Plug 'tpope/vim-surround'
     	Plug 'tpope/vim-dispatch'
@@ -119,7 +119,8 @@
 
 	"The default leader is '\', but many people prefer ',' as it's in a standard
 	"location
-	let mapleader = ','
+    let mapleader = ','
+    "let mapleader = "<Space>" 
 
     " Making it so ; works like : for commands. Saves typing and eliminates :W style typos due to lazy holding shift.
     nnoremap ; :
@@ -225,13 +226,24 @@ endfunction
 :set fileformat=unix
 
 " PLUGIN SETTINGS {
-	let g:tmux_navigator_no_mappings = 1
+    "tmux navigator {
+	    let g:tmux_navigator_no_mappings = 1
 
-	nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
-	nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
-	nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
-	nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
-	"nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
+	    nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
+	    nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
+	    nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
+	    nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
+	    "nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
+    "}
+    "CtrlP {
+        let g:ctrlp_map = '<c-p>'
+        let g:ctrlp_cmd = 'CtrlP'
+        let g:ctrlp_working_path_mode = 'ar'
+    "}
+    "Unite {
+       "call unite#filters#matcher_default#use(['matcher_fuzzy'])
+       "nnoremap <C-p> :Unite file_rec/async<cr>  
+    "}
 
   "}
 
