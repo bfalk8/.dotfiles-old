@@ -10,11 +10,13 @@
 
 		" Make sure you use single quotes
 		" Always Loaded
+        Plug 'christoomey/vim-tmux-navigator'
 		Plug 'kien/ctrlp.vim'
 		Plug 'tpope/vim-fugitive'
 		Plug 'tpope/vim-surround'
-"    	Plug 'OmniSharp/omnisharp-vim'
     	Plug 'tpope/vim-dispatch'
+        Plug 'Valloric/YouCompleteMe'
+"    	Plug 'OmniSharp/omnisharp-vim'
 "    	Plug 'scrooloose/syntastic'
 
 		" On-demand loading
@@ -87,6 +89,8 @@
 	set smartcase					" case sensitive when uc present
 	set wildmenu					" show list instead of just completing
 	set wildmode=list:longest,full	" command <Tab> completion, list matches, then longest common part, then all.
+	set splitbelow					" new splits go below current one
+	set splitright					" new vsplits go to the right
 	" set whichwrap=b,s,h,l,<,>,[,]	" backspace and cursor keys wrap to
 	" set scrolljump=5 				" lines to scroll when cursor leaves screen
 	" set scrolloff=3 				" minimum lines to keep above and below cursor
@@ -120,6 +124,11 @@
     " Making it so ; works like : for commands. Saves typing and eliminates :W style typos due to lazy holding shift.
     nnoremap ; :
 
+	" Switching between splits
+	nnoremap <C-J> <C-W><C-J>
+	nnoremap <C-K> <C-W><C-K>
+	nnoremap <C-L> <C-W><C-L>
+	nnoremap <C-H> <C-W><C-H>
 	" The following two lines conflict with moving to top and bottom of the
 	" screen
 	" If you prefer that functionality, comment them out.
@@ -216,6 +225,13 @@ endfunction
 :set fileformat=unix
 
 " PLUGIN SETTINGS {
+	let g:tmux_navigator_no_mappings = 1
+
+	nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
+	nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
+	nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
+	nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
+	"nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
 
   "}
 

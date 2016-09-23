@@ -28,3 +28,17 @@ export VISUAL=$EDITOR
 source $ZSH/oh-my-zsh.sh
 # ooh, what is this? Aliases?
 source .oh-my-zsh/lib/alias.zsh
+
+# zplug settings here
+source ~/.zplug/init.zsh
+# plugins
+zplug "lukechilds/zsh-nvm"
+
+# zplug check returns true if all packages are installed
+# Therefore, when it returns false, run zplug install
+if ! zplug check; then
+    zplug install
+fi
+
+# source plugins and add commands to the PATH
+zplug load

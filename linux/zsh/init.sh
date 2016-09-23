@@ -25,3 +25,5 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 echo "linking oh-my-zsh alias\n"
 ln -s ~/.dotfiles/linux/zsh/alias.zsh ~/.oh-my-zsh/lib/alias.zsh
 
+echo "installing zplug\n"
+curl -sL zplug.sh/installer | zsh

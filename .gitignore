@@ -3,3 +3,5 @@ vim/.vim/bundle/*
 
 # except
 vim/.vim/bundle/Vundle.vim
+
+linux/vim/.vim/plugged/*
