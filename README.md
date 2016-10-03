@@ -1,11 +1,10 @@
 # .dotfiles
 
 # Linux Install
+- `install zsh and set to default shell`
 - `cd ~`
-- `git clone https://github.com/bfalk8/.dotfiles.git && cd .dotfiles`
-- `git submodule init`
-- `git submodule update`
-- `./ubuntu-init.sh`
+- `git clone https://github.com/bfalk8/.dotfiles.git && cd .dotfiles/linux`
+- `./init.sh`
 - sit back and let NIX magic happen :)
 
 # Windows Install
@@ -34,7 +33,9 @@ Download portable version from [ConEmu](http://conemu.github.io/)
 
 # Post-Init
 # vim
-open vim and run `:PluginInstall`
+open vim and run `:PlugInstall`
+Follow installation for plugins
+- [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
 
 # atom
 - `cd ~/.dotfiles/atom`

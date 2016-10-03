@@ -12,12 +12,14 @@
 		Plug 'ctrlpvim/ctrlp.vim'
         "Plug 'Shougo/unite.vim'
         "Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+        Plug 'tpope/vim-obsession'
 		Plug 'tpope/vim-fugitive'
 		Plug 'tpope/vim-surround'
     	Plug 'tpope/vim-dispatch'
+        Plug 'tpope/vim-commentary'
         Plug 'Valloric/YouCompleteMe'
+   	    Plug 'scrooloose/syntastic'
 "    	Plug 'OmniSharp/omnisharp-vim'
-"    	Plug 'scrooloose/syntastic'
 
 		" On-demand loading
 		Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -81,6 +83,9 @@
 	set backspace=indent,eol,start	" backspace for dummys
 	set linespace=0					" No extra spaces between rows
 	set nu							" Line numbers on
+	set rnu							" Relative Line numbers on
+    autocmd WinEnter,FocusGained * :setlocal number relativenumber
+    autocmd WinLeave,FocusLost * :setlocal number norelativenumber
 	set showmatch					" show matching brackets/parenthesis
 	set incsearch					" find as you type search
 	set hlsearch					" highlight search terms

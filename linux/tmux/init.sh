@@ -11,10 +11,13 @@ die() {
 
 echo "Performing tmux init\n"
 
-# Backup existing .vim stuff
+# Backup existing tmux stuff
 echo "backing up current tmux config\n"
 for i in ~/.tmux.conf; do [ -e $i ] && mv $i $i.old; done
 
-# Linking vim to dotfiles
+# Linking tmux to dotfiles
 echo "linking tmux to .dotfiles"
 ln -s ~/.dotfiles/linux/tmux/.tmux.conf ~/.tmux.conf
+
+echo "cloning Tmux plugin manager\n"
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
