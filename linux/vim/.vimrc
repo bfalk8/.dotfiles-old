@@ -19,6 +19,9 @@
         Plug 'tpope/vim-commentary'
         Plug 'Valloric/YouCompleteMe'
    	    Plug 'scrooloose/syntastic'
+        Plug 'vim-airline/vim-airline'
+        Plug 'vim-airline/vim-airline-themes'
+        " Plug 'powerline/powerline' "DEPRECATED
 "    	Plug 'OmniSharp/omnisharp-vim'
 
 		" On-demand loading
@@ -32,7 +35,7 @@
 
 " General {
 	set background=dark         " Assume a dark background
-  set term=screen-256color
+    set term=screen-256color
 	filetype plugin indent on  	" Automatically detect file types.
 	syntax on 					" syntax highlighting
 	" set mouse=a					" automatically enable mouse usage
@@ -71,7 +74,8 @@
 
 " Vim UI {
 
-  colorscheme badwolf    		" load a colorscheme
+  " colorscheme badwolf    		" load a colorscheme
+  colorscheme onedark    		" load a colorscheme
     
     " set tabpagemax=15 				" only show 15 tabs
 	set showmode                   	" display the current mode
@@ -107,7 +111,7 @@
 " }
 
 " Formatting {
-	set wrap                     	" wrap long lines
+	" set wrap                     	" wrap long lines
 	set autoindent                 	" indent at the same level of the previous line
 	set shiftwidth=4               	" use indents of 4 spaces
 	set expandtab 	  	     		" tabs are spaces, not tabs
@@ -227,8 +231,15 @@ endfunction
     " endif
 " }
 
-:set fileformats=unix,dos
-:set fileformat=unix
+" FILE SETTINGS {
+	:set fileformats=unix,dos
+	:set fileformat=unix
+
+	" Python shiftwidth, tabstop, softtabstop
+		autocmd FileType python set sw=4
+		autocmd FileType python set ts=4
+		autocmd FileType python set sts=4
+"}
 
 " PLUGIN SETTINGS {
     "tmux navigator {
@@ -249,6 +260,48 @@ endfunction
        "call unite#filters#matcher_default#use(['matcher_fuzzy'])
        "nnoremap <C-p> :Unite file_rec/async<cr>  
     "}
+    "YouCompleteMe {
+		" Configure YouCompleteMe
+		let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags file
+		let g:ycm_use_ultisnips_completer = 1 " Default 1, just ensure
+		let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
+		let g:ycm_complete_in_comments = 1 " Completion in comments
+		let g:ycm_complete_in_strings = 1 " Completion in string
+		
+		let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
+		let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
+
+		" Goto definition with F3
+		map <F3> :YcmCompleter GoTo<CR> 
+    "}
+    "vim-airline {
+        let g:airline_theme='base16_chalk'
+        set laststatus=2
+        
+        " Use the powerline fonts...make sure they are installed
+        let g:airline_powerline_fonts = 1
+		" if !exists('g:airline_symbols')
+	  		" let g:airline_symbols = {}
+		" endif
+		" let g:airline_symbols.space = "\ua0"
+        
+        " ALLOWS IT TO LOOK GOOD WITHOUT THE POWERLINE FONTS, REMOVES '>' and
+        " let g:airline_left_sep=''
+        " let g:airline_right_sep=''
+        
+        " Shows all buffers
+        " let g:airline#extensions#tabline#enabled = 1
+    "}
+    " Syntastix {
+       	" set statusline+=%#warningmsg#
+		" set statusline+=%{SyntasticStatuslineFlag()}
+		" set statusline+=%*
+		
+		" let g:syntastic_always_populate_loc_list = 1
+		" let g:syntastic_auto_loc_list = 1
+		" let g:syntastic_check_on_open = 1
+		" let g:syntastic_check_on_wq = 0 
+    " }
 
   "}
 
