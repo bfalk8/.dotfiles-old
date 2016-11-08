@@ -171,7 +171,7 @@ bindsym $mod+r mode "resize"
 # Custom Color Scheme https://i3wm.org/docs/userguide.html#_changing_colors
 # <colorclass> <border> <background> <text> <indicator> <child_border>
 set $cc-bg-color            #2f343f
-set $cc-inactive-bg-color   #2f343f
+set $cc-inactive-bg-color   #000000
 set $cc-text-color          #f3f4f5
 set $cc-inactive-text-color #676E7D
 set $cc-urgent-bg-color     #E53935
@@ -191,7 +191,7 @@ bar {
         status_command i3status
         position top
         colors {
-            # background $cc-bg-color
+            background #000000
             separator #757575
             # <colorclass>      <border>                <background>            <text>
             focused_workspace   $cc-bg-color            $cc-bg-color            $cc-text-color
