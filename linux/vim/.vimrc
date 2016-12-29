@@ -104,7 +104,7 @@ set background=dark     " Assume a dark background
     " set foldenable                " auto fold code
     " set gdefault                  " the /g flag on :s substitutions by default
     set list
-    set listchars=tab:>.,trail:.,extends:#,nbsp:. " Highlight problematic whitespace
+    set listchars=tab:>.,trail:.,extends:>,precedes:<,nbsp:. " Highlight problematic whitespace
 
 " }
 
@@ -128,10 +128,14 @@ set background=dark     " Assume a dark background
     let mapleader = "\<Space>"
 
     " Making it so ; works like : for commands. Saves typing and eliminates :W style typos due to lazy holding shift.
+    " enables repeat f,F,t,T
+    nnoremap <Leader>; ; 
     nnoremap ; :
-    nnoremap : ;
+    " nnoremap : ;
+    " enables repeat f,F,t,T
+    vnoremap <Leader>; ;
     vnoremap ; :
-    vnoremap : ;
+    " vnoremap : ;
 
     " Switching between splits
     nnoremap <C-J> <C-W><C-J>
@@ -167,7 +171,7 @@ set background=dark     " Assume a dark background
 "}
 
 " PLUGIN SETTINGS {
-    "tmux navigator {
+    " tmux navigator {
         let g:tmux_navigator_no_mappings = 1
 
         nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
@@ -175,17 +179,20 @@ set background=dark     " Assume a dark background
         nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
         nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
         "nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
-    "}
-    "CtrlP {
+    " }
+    " CtrlP {
         let g:ctrlp_map = '<c-p>'
         let g:ctrlp_cmd = 'CtrlP'
         let g:ctrlp_working_path_mode = 'ar'
-    "}
-    "Unite {
+    " }
+    " NERDTree {
+        map <Leader>n :NERDTreeToggle<CR>
+    " }
+    " Unite {
        "call unite#filters#matcher_default#use(['matcher_fuzzy'])
        "nnoremap <C-p> :Unite file_rec/async<cr>
-    "}
-    "YouCompleteMe {
+    " }
+    " YouCompleteMe {
         " Configure YouCompleteMe
         let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags file
         let g:ycm_use_ultisnips_completer = 1 " Default 1, just ensure
@@ -199,8 +206,8 @@ set background=dark     " Assume a dark background
 
         " Goto definition with F3
         map <F3> :YcmCompleter GoTo<CR>
-    "}
-    "vim-airline {
+    " }
+    " vim-airline {
         " let g:airline_theme='base16_chalk'
         let g:airline_theme='base16_pop'
         set laststatus=2
@@ -220,7 +227,7 @@ set background=dark     " Assume a dark background
         let g:airline#extensions#tabline#show_tab_nr = 1
         let g:airline#extensions#tabline#show_tab_type = 0
         let g:airline#extensions#tabline#show_close_button = 0
-    "}
+    " }
     " Syntastic {
         map <Leader>s :SyntasticToggleMode<CR>
         set statusline+=%#warningmsg#
@@ -233,7 +240,7 @@ set background=dark     " Assume a dark background
         let g:syntastic_check_on_wq = 0
     " }
 
-"}
+" }
 
 " GUI Settings {
     " GVIM- (here instead of .gvimrc)
