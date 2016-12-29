@@ -4,6 +4,8 @@ export ZSH="$HOME/.oh-my-zsh";
 ZSH_THEME="clean"
 plugins=(git)
 
+# set caps lock to escape key
+setxkbmap -option caps:escape
 
 # want your terminal to support 256 color schemes? I do ...
 export TERM="xterm-256color"
@@ -28,11 +30,13 @@ export VISUAL=$EDITOR
 source $ZSH/oh-my-zsh.sh
 # ooh, what is this? Aliases?
 source .oh-my-zsh/lib/alias.zsh
+# disable shared history
+unsetopt share_history
 
 # zplug settings here
 source ~/.zplug/init.zsh
 # plugins
-zplug "lukechilds/zsh-nvm"
+# zplug "lukechilds/zsh-nvm"
 
 # zplug check returns true if all packages are installed
 # Therefore, when it returns false, run zplug install
@@ -42,3 +46,9 @@ fi
 
 # source plugins and add commands to the PATH
 zplug load
+
+export NVM_DIR="/home/brandon/.nvm"
+alias nvmload='[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"'  # This loads nvm
+
+# haskell stack
+export PATH=/home/brandon/.local/bin:$PATH

@@ -188,7 +188,8 @@ client.urgent           $cc-urgent-bg-color     $cc-urgent-bg-color     $cc-text
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+        # status_command i3status
+        status_command $HOME/.config/i3/conky-i3bar
         position top
         colors {
             background #000000
@@ -204,19 +205,26 @@ bar {
 exec_always --no-startup-id nitrogen --restore
 exec --no-startup-id nm-applet
 exec_always --no-startup-id compton #-f
+exec --no-startup-id udiskie -2 -s
+exec --no-startup-id guake
+exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
 
 ##### custom keybindings ######
+
+# log out of system
+bindsym $mod+shift+Delete exec i3-msg exit
 
 # lock system
 bindsym $mod+shift+x exec i3lock
 
 # Pulse Audio controls
 # bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioRaiseVolume exec amixer set Master 5%+ #increase sound volume
+# bindsym XF86AudioRaiseVolume exec amixer set Master 5%+; exec notify-send -t 150 Sound "`amixer get Master |grep % |awk '{print $4}'|sed 's/[^0-9\%]//g'`" #increase sound volume
+bindsym XF86AudioRaiseVolume exec amixer set Master 5%+; exec $HOME/dev/bin/dunstify -p -r 56 -t 150 Sound "`amixer get Master |grep % |awk '{print $4}'|sed 's/[^0-9\%]//g'`" #increase sound volume
 # bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioLowerVolume exec amixer set Master 5%- #decrease sound volume
+bindsym XF86AudioLowerVolume exec amixer set Master 5%-; exec $HOME/dev/bin/dunstify -p -r 56 -t 150 Sound "`amixer get Master |grep % |awk '{print $4}'|sed 's/[^0-9\%]//g'`"  #decrease sound volume
 # bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
-bindsym XF86AudioMute exec amixer set Master toggle # mute sound
+bindsym XF86AudioMute exec amixer set Master toggle; exec $HOME/dev/bin/dunstify -p -r 56 -t 150 Sound "`amixer get Master |grep % |awk '{print $6}'|sed 's/[^a-z\]//g'`"  # mute sound
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
