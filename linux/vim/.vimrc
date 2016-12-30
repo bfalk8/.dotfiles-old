@@ -6,28 +6,31 @@ set background=dark     " Assume a dark background
     call plug#begin('~/.vim/plugged')
 
     " Make sure you use single quotes
-    " Always Loaded
     Plug 'christoomey/vim-tmux-navigator'
     Plug 'ctrlpvim/ctrlp.vim'
     Plug 'chriskempson/base16-vim'
     "Plug 'Shougo/unite.vim'
-    "Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+    Plug 'Shougo/vimproc.vim', {'do' : 'make'}
     Plug 'tpope/vim-obsession'
     Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-dispatch'
     Plug 'tpope/vim-commentary'
-    Plug 'Valloric/YouCompleteMe'
+    Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
+    " Plug 'Valloric/YouCompleteMe', {'do': './install.py --tern-completer --omnisharp-completer'}
     Plug 'scrooloose/syntastic'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     " Plug 'powerline/powerline' "DEPRECATED
-    " Plug 'OmniSharp/omnisharp-vim'
+    Plug 'godlygeek/tabular'
 
     " On-demand loading
     Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+    " Plug 'OmniSharp/omnisharp-vim', {'for': 'cs'}
+    Plug 'eagletmt/ghcmod-vim', {'for': 'haskell'}
+    Plug 'eagletmt/neco-ghc', {'for': 'haskell'}
 
-    " Add plugins to &runtimepath
+    " Add plugins to runtimepath
     call plug#end()
 "}
 
@@ -129,7 +132,7 @@ set background=dark     " Assume a dark background
 
     " Making it so ; works like : for commands. Saves typing and eliminates :W style typos due to lazy holding shift.
     " enables repeat f,F,t,T
-    nnoremap <Leader>; ; 
+    nnoremap <Leader>; ;
     nnoremap ; :
     " nnoremap : ;
     " enables repeat f,F,t,T
@@ -142,6 +145,9 @@ set background=dark     " Assume a dark background
     nnoremap <C-K> <C-W><C-K>
     nnoremap <C-L> <C-W><C-L>
     nnoremap <C-H> <C-W><C-H>
+
+    " Clearing the highlight from search
+    nnoremap <silent> <Leader>/ :noh<CR>
 
     " Moving Blocks of Text
     " nnoremap <Leader>j :m .+1<CR>==
@@ -164,10 +170,25 @@ set background=dark     " Assume a dark background
     :set fileformats=unix,dos
     :set fileformat=unix
 
-    " Python shiftwidth, tabstop, softtabstop
-    autocmd FileType python set sw=4
-    autocmd FileType python set ts=4
-    autocmd FileType python set sts=4
+    " Python shiftwidth, tabstop, softtabstop {
+        autocmd FileType python set sw=4
+        autocmd FileType python set ts=4
+        autocmd FileType python set sts=4
+    " }
+    " Haskell {
+        autocmd FileType haskell set tabstop=8
+        autocmd FileType haskell set expandtab
+        autocmd FileType haskell set softtabstop=4
+        autocmd FileType haskell set shiftwidth=4
+        autocmd FileType haskell set shiftround
+        autocmd FileType haskell nnoremap <Leader>c :GhcModCheckAsync<CR>
+        autocmd FileType haskell nnoremap <Leader>/ :noh<CR>:GhcModTypeClear<CR>
+        autocmd FileType haskell nnoremap <Leader>ti :GhcModTypeInsert<CR>
+        autocmd FileType haskell nnoremap <Leader>tc :GhcModType<CR>
+        " Disable haskell-vim omnifunc
+        let g:haskellmode_completion_ghc = 1
+        autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+    " }
 "}
 
 " PLUGIN SETTINGS {
@@ -183,7 +204,7 @@ set background=dark     " Assume a dark background
     " CtrlP {
         let g:ctrlp_map = '<c-p>'
         let g:ctrlp_cmd = 'CtrlP'
-        let g:ctrlp_working_path_mode = 'ar'
+        let g:ctrlp_working_path_mode = 'ra'
     " }
     " NERDTree {
         map <Leader>n :NERDTreeToggle<CR>
@@ -206,6 +227,7 @@ set background=dark     " Assume a dark background
 
         " Goto definition with F3
         map <F3> :YcmCompleter GoTo<CR>
+        " let g:ycm_semantic_triggers = {'haskell' : ['.']}
     " }
     " vim-airline {
         " let g:airline_theme='base16_chalk'
@@ -227,6 +249,16 @@ set background=dark     " Assume a dark background
         let g:airline#extensions#tabline#show_tab_nr = 1
         let g:airline#extensions#tabline#show_tab_type = 0
         let g:airline#extensions#tabline#show_close_button = 0
+
+        " Truncation
+          " let g:airline#extensions#default#section_truncate_width = {
+          "     \ 'b': 79,
+          "     \ 'x': 60,
+          "     \ 'y': 88,
+          "     \ 'z': 45,
+          "     \ 'warning': 80,
+          "     \ 'error': 80,
+          "     \ }
     " }
     " Syntastic {
         map <Leader>s :SyntasticToggleMode<CR>
@@ -238,6 +270,16 @@ set background=dark     " Assume a dark background
         let g:syntastic_auto_loc_list = 0
         let g:syntastic_check_on_open = 0
         let g:syntastic_check_on_wq = 0
+    " }
+    " Tabular {
+        nnoremap <Leader>a/ :Tabularize /
+        vnoremap <Leader>a/ :Tabularize /
+        nnoremap <Leader>a= :Tabularize /=<CR>
+        vnoremap <Leader>a= :Tabularize /=<CR>
+        nnoremap <Leader>a: :Tabularize /:<CR>
+        vnoremap <Leader>a: :Tabularize /:<CR>
+        nnoremap <Leader>a- :Tabularize /-<CR>
+        vnoremap <Leader>a- :Tabularize /-<CR>
     " }
 
 " }
@@ -288,17 +330,17 @@ set background=dark     " Assume a dark background
     endfunction
     call InitializeDirectories()
 
-    function! NERDTreeInitAsNeeded()
-        redir => bufoutput
-        buffers!
-        redir END
-        let idx = stridx(bufoutput, "NERD_tree")
-        if idx > -1
-            NERDTreeMirror
-            NERDTreeFind
-            wincmd l
-        endif
-    endfunction
+    " function! NERDTreeInitAsNeeded()
+    "     redir => bufoutput
+    "     buffers!
+    "     redir END
+    "     let idx = stridx(bufoutput, "NERD_tree")
+    "     if idx > -1
+    "         NERDTreeMirror
+    "         NERDTreeFind
+    "         wincmd l
+    "     endif
+    " endfunction
 " }
 
 " Use local vimrc if available {
