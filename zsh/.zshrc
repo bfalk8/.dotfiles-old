@@ -29,7 +29,7 @@ export VISUAL=$EDITOR
 #start oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 # ooh, what is this? Aliases?
-source .oh-my-zsh/lib/alias.zsh
+source ~/.oh-my-zsh/lib/alias.zsh
 # disable shared history
 unsetopt share_history
 

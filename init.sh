@@ -17,4 +17,4 @@ mkdir ~/.config
 
 # Run all other init scripts
 echo "Running all init scripts for Linux init"
-for i in ../git ./vim ./zsh ./tmux; do [ -e $i ] && $i/init.sh; done
+for i in ./git ./vim ./zsh ./tmux; do [ -e $i ] && $i/init.sh; done

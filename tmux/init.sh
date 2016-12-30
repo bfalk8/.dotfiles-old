@@ -17,7 +17,7 @@ for i in ~/.tmux.conf; do [ -e $i ] && mv $i $i.old; done
 
 # Linking tmux to dotfiles
 echo "linking tmux to .dotfiles"
-ln -s ~/.dotfiles/linux/tmux/.tmux.conf ~/.tmux.conf
+ln -s ~/.dotfiles/tmux/.tmux.conf ~/.tmux.conf
 
 echo "cloning Tmux plugin manager\n"
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm

@@ -20,5 +20,5 @@ mkdir ~/.config/i3status
 
 # Linking tmux to dotfiles
 echo "linking i3 and i3status to .dotfiles"
-ln -s ~/.dotfiles/linux/i3/config ~/.config/i3/config
-ln -s ~/.dotfiles/linux/i3/i3status/config ~/.config/i3status/config
+ln -s ~/.dotfiles/i3/config ~/.config/i3/config
+ln -s ~/.dotfiles/i3/i3status/config ~/.config/i3status/config

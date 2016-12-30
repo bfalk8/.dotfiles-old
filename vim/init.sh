@@ -9,6 +9,7 @@ die() {
     exit 1
 }
 
+echo "Performing vim init\n"
 
 # Backup existing .vim stuff
 echo "backing up current vim config\n"
