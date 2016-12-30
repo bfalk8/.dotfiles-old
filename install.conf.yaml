@@ -1,6 +1,7 @@
 - defaults:
     link:
         relink: true
+        # force: true
 
 - clean: ['~']
 
@@ -21,6 +22,6 @@
     ~/.pdbrc: python/.pdbrc
 
 - shell:
-    - [ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm, Downloads Tmux plugin manager ]
-    - [ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)", Install oh-my-zsh ]
-    - [ curl -sL zplug.sh/installer | zsh, Install zplug ]
+    - [ 'git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm', Downloads Tmux plugin manager ]
+    - [ 'sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"', Install oh-my-zsh ]
+    - [ 'curl -sL zplug.sh/installer | zsh', Install zplug ]
