@@ -1,0 +1,51 @@
+conky.config = {
+	background = false,
+	out_to_console = true,
+	out_to_x = false,
+	max_text_width = 0,
+	own_window = false,
+	update_interval = 0.5,
+	total_run_times = 0,
+	short_units = true,
+	if_up_strictness = 'address',
+	use_spacer = 'right',
+	override_utf8_locale = false,
+	cpu_avg_samples = 2,
+};
+
+conky.text = [[
+[
+#Pacman
+{"full_text":" ","color":"\#c92222","separator":false,"separator_block_width":6},\
+{"full_text":"[${execi 200 checkupdates | wc -l}]","color":"\#f3f4f5","separator":false,"separator_block_width":6},\
+#AUR
+#{"full_text":" ","color":"\#AEB404","separator":false,"separator_block_width":6},\
+#{"full_text":"[${execi 1900 cower -u | wc -l}]","color":"\#808080","separator":false,"separator_block_width":6},\
+#Kernel
+#{"full_text":" ","color":"\#FF4000","separator":false,"separator_block_width":6},\
+#{"full_text":"[${kernel}]","color":"\#808080","separator":false,"separator_block_width":6},\
+#Wifi
+{"full_text":" ","color":"\#c99422","separator":false,"separator_block_width":6},\
+{"full_text":"[${wireless_essid wlp3s0}]","color":"\#f3f4f5","separator":false,"separator_block_width":6},\
+#Finds current volume. May need modified depending on your setup
+#{"full_text":" ","color":"\#268BD2","separator":false,"separator_block_width":6},\
+#{"full_text":"${exec amixer -c 0 get Master | grep Mono: | cut -d " " -f6} ","color":"\#808080","separator":false,"separator_block_width":6},\
+#Brighness
+# {"full_text":" ","color":"\#F7FE2E","separator":false,"separator_block_width":6},\
+# {"full_text":"[${exec xbacklight| awk '{printf("%d\n",$1 + 0.5)}'}%] ","color":"\#808080","separator":false,"separator_block_width":6},\
+#Memory
+{"full_text":" ","color":"\#75c922","separator":false,"separator_block_width":6},\
+{"full_text":"[$mem / $memmax]","color":"\#f3f4f5","separator":false,"separator_block_width":6},\
+#CPU
+{"full_text":" ","color":"\#22c980","separator":false,"separator_block_width":6},\
+{"full_text":"[$cpu%]","color":"\#f3f4f5","separator":false,"separator_block_width":6},\
+#Battery
+{"full_text":" ","color":"\#224ec9","separator":false,"separator_block_width":6},\
+{"full_text":"[${battery_percent BAT1}% | ${battery_percent BAT0}%]","color":"\#f3f4f5","separator":false,"separator_block_width":6},\
+#Calender/time
+{"full_text":" ","color":"\#c922a8","separator":false,"separator_block_width":6},\
+{"full_text":"${time %a %b %d}","color":"\#f3f4f5","separator":false},\
+{"full_text":" ","color":"\#c92235","separator":false,"separator_block_width":6},\
+{"full_text":"${time %H:%M:%S} ","color":"\#f3f4f5","separator":false}
+],
+]];

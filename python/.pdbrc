@@ -1,0 +1,1 @@
+alias kk os.system('kill -9 %d' % os.getpid())

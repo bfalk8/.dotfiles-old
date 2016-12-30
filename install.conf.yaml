@@ -1,0 +1,26 @@
+- defaults:
+    link:
+        relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.gitconfig: git/.gitconfig
+    ~/.vimrc: vim/.vimrc
+    ~/.vim: vim/.vim
+    ~/.zshrc: zsh/.zshrc
+    ~/.oh-my-zsh/lib/alias.zsh: zsh/alias.zsh
+    ~/.tmux.conf: tmux/.tmux.conf
+    ~/.config/i3/config: i3/config
+    ~/.config/i3/conky-i3bar: i3/conky-i3bar
+    ~/.config/i3/conky.rc: i3/conky.rc
+    ~/.config/termite/config: termite/config
+    ~/.config/dunst/dunstrc: dunst/dunstrc
+    ~/.config/conky/conky.conf: conky/conky.conf
+    ~/.xinitrc: X11/.xinitrc
+    ~/.pdbrc: python/.pdbrc
+
+- shell:
+    - [ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm, Downloads Tmux plugin manager ]
+    - [ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)", Install oh-my-zsh ]
+    - [ curl -sL zplug.sh/installer | zsh, Install zplug ]
