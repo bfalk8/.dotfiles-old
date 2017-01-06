@@ -10,6 +10,11 @@ To install packages from the list backup, run:
 
 `$ pacman -S - < pkglist.txt`
 
+To store list of AUR (foreign packages)
+`$ pacman -Qqm > aurlist.txt`
+
+Drop the small 'q' in the above pacman commands to get version numbers
+
 In case the list includes foreign packages, such as AUR packages, remove them first:
 
 `$ pacman -S $(comm -12 <(pacman -Slq | sort) <(sort pkglist.txt))`

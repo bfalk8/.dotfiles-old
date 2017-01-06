@@ -1,0 +1,4 @@
+cower
+numix-icon-theme-git
+pacaur
+tpacpi-bat

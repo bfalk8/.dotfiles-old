@@ -134,6 +134,7 @@ bindsym $mod+Shift+0 move container to workspace $workspace0
 
 # force certain program classes into workspaces
 assign [class="Chromium"] $workspace2
+# assign [class="mpv"] $workspace3
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -220,15 +221,15 @@ bindsym $mod+shift+x exec i3lock
 # Pulse Audio controls
 # bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
 # bindsym XF86AudioRaiseVolume exec amixer set Master 5%+; exec notify-send -t 150 Sound "`amixer get Master |grep % |awk '{print $4}'|sed 's/[^0-9\%]//g'`" #increase sound volume
-bindsym XF86AudioRaiseVolume exec amixer set Master 5%+; exec $HOME/dev/bin/dunstify -p -r 56 -t 150 Sound "`amixer get Master |grep % |awk '{print $4}'|sed 's/[^0-9\%]//g'`" #increase sound volume
+bindsym XF86AudioRaiseVolume exec amixer set Master 5%+; exec $HOME/dev/bin/dunstify -p -r 56 -t 150 Sound " `amixer get Master |grep % |awk '{print $4}'|sed 's/[^0-9\%]//g'`" #increase sound volume
 # bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioLowerVolume exec amixer set Master 5%-; exec $HOME/dev/bin/dunstify -p -r 56 -t 150 Sound "`amixer get Master |grep % |awk '{print $4}'|sed 's/[^0-9\%]//g'`"  #decrease sound volume
+bindsym XF86AudioLowerVolume exec amixer set Master 5%-; exec $HOME/dev/bin/dunstify -p -r 56 -t 150 Sound " `amixer get Master |grep % |awk '{print $4}'|sed 's/[^0-9\%]//g'`"  #decrease sound volume
 # bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
-bindsym XF86AudioMute exec amixer set Master toggle; exec $HOME/dev/bin/dunstify -p -r 56 -t 150 Sound "`amixer get Master |grep % |awk '{print $6}'|sed 's/[^a-z\]//g'`"  # mute sound
+bindsym XF86AudioMute exec amixer set Master toggle; exec $HOME/dev/bin/dunstify -p -r 56 -t 150 Sound " `amixer get Master |grep % |awk '{print $6}'|sed 's/[^a-z\]//g'`"  # mute sound
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10 -time 0; exec sleep 10; exec  $HOME/dev/bin/dunstify -p -r 56 -t 100 Backlight "  `xbacklight | xargs printf '%.*f\n' 0 $p`"  # mute sound# increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10 -time 0; exec sleep 10; exec  $HOME/dev/bin/dunstify -p -r 56 -t 100 Backlight "  `xbacklight | xargs printf '%.*f\n' 0 $p`"  # mute sound# increase screen brightness# decrease screen brightness
 
 # Touchpad controls
 bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad

@@ -22,7 +22,6 @@ diffutils
 dmenu
 dunst
 e2fsprogs
-emacs
 evince
 expac
 fakeroot
@@ -64,6 +63,7 @@ lightdm
 lightdm-gtk-greeter
 lightdm-gtk-greeter-settings
 linux
+livestreamer
 logrotate
 lvm2
 lxappearance
@@ -113,7 +113,6 @@ thunar-volman
 tk
 tlp
 tmux
-tp_smapi
 tree
 ttf-dejavu
 ttf-liberation
@@ -129,6 +128,7 @@ which
 wireshark-cli
 wireshark-gtk
 wpa_supplicant
+xclip
 xf86-video-intel
 xfsprogs
 xorg-server
@@ -138,5 +138,6 @@ xorg-utils
 xorg-xinit
 xterm
 yaourt
+youtube-dl
 youtube-viewer
 zsh
