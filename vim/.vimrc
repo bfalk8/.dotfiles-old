@@ -16,7 +16,8 @@ set background=dark     " Assume a dark background
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-dispatch'
     Plug 'tpope/vim-commentary'
-    Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
+    " Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
+    Plug 'Valloric/YouCompleteMe', {'do': './install.py --tern-completer --clang-completer'}
     " Plug 'Valloric/YouCompleteMe', {'do': './install.py --tern-completer --omnisharp-completer'}
     Plug 'scrooloose/syntastic'
     Plug 'vim-airline/vim-airline'
@@ -25,12 +26,15 @@ set background=dark     " Assume a dark background
     Plug 'godlygeek/tabular'
     Plug 'SirVer/ultisnips'
     Plug 'honza/vim-snippets'
+    Plug 'jiangmiao/auto-pairs'
 
     " On-demand loading
     Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
     " Plug 'OmniSharp/omnisharp-vim', {'for': 'cs'}
     Plug 'eagletmt/ghcmod-vim', {'for': 'haskell'}
     Plug 'eagletmt/neco-ghc', {'for': 'haskell'}
+    Plug 'pangloss/vim-javascript', {'for': 'javascript'}
+    Plug 'mxw/vim-jsx', {'for': 'javascript'}
 
     " Add plugins to runtimepath
     call plug#end()
@@ -177,6 +181,11 @@ set background=dark     " Assume a dark background
         autocmd FileType python set ts=4
         autocmd FileType python set sts=4
     " }
+    " JavaScript {
+        autocmd FileType javascript set sw=2
+        autocmd FileType javascript set ts=2
+        autocmd FileType javascript set sts=2
+    " }
     " Haskell {
         autocmd FileType haskell set tabstop=8
         autocmd FileType haskell set expandtab
@@ -277,6 +286,10 @@ set background=dark     " Assume a dark background
         let g:syntastic_auto_loc_list = 0
         let g:syntastic_check_on_open = 0
         let g:syntastic_check_on_wq = 0
+
+        " JavaScript {
+            let g:syntastic_javascript_checkers = ['eslint']
+        " }
     " }
     " Tabular {
         nnoremap <Leader>a/ :Tabularize /

@@ -20,6 +20,8 @@
     ~/.config/conky/conky.conf: conky/conky.conf
     ~/.xinitrc: X11/.xinitrc
     ~/.pdbrc: python/.pdbrc
+    ~/.eslintrc: npm/.eslintrc.json
+    ~/.tern-config: npm/.tern-config
 
 - shell:
     - [ 'git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm', Downloads Tmux plugin manager ]
