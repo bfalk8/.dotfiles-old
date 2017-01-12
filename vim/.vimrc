@@ -23,6 +23,8 @@ set background=dark     " Assume a dark background
     Plug 'vim-airline/vim-airline-themes'
     " Plug 'powerline/powerline' "DEPRECATED
     Plug 'godlygeek/tabular'
+    Plug 'SirVer/ultisnips'
+    Plug 'honza/vim-snippets'
 
     " On-demand loading
     Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -228,6 +230,11 @@ set background=dark     " Assume a dark background
         " Goto definition with F3
         map <F3> :YcmCompleter GoTo<CR>
         " let g:ycm_semantic_triggers = {'haskell' : ['.']}
+    " }
+    " UltiSnips {
+        let g:UltiSnipsExpandTrigger="<c-l>"
+        let g:UltiSnipsJumpForwardTrigger="<c-l>"
+        let g:UltiSnipsJumpBackwardTrigger="<c-m>"
     " }
     " vim-airline {
         " let g:airline_theme='base16_chalk'
