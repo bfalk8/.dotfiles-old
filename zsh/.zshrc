@@ -2,7 +2,7 @@
 
 export ZSH="$HOME/.oh-my-zsh";
 ZSH_THEME="clean"
-plugins=(git)
+plugins=(git ssh-agent)
 
 # set caps lock to escape key
 setxkbmap -option caps:escape
@@ -49,9 +49,15 @@ fi
 
 # source plugins and add commands to the PATH
 zplug load
+zstyle :omz:plugins:ssh-agent lifetime 2h
 
 # export NVM_DIR="/home/brandon/.nvm"
 # alias nvmload='[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"'  # This loads nvm
 
 # haskell stack
 export PATH=$HOME/.local/bin:$PATH
+
+# ruby gems
+if which ruby >/dev/null && which gem >/dev/null; then
+    export PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+fi

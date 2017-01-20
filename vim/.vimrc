@@ -9,6 +9,7 @@ set background=dark     " Assume a dark background
     Plug 'christoomey/vim-tmux-navigator'
     Plug 'ctrlpvim/ctrlp.vim'
     Plug 'chriskempson/base16-vim'
+    Plug 'morhetz/gruvbox'
     "Plug 'Shougo/unite.vim'
     Plug 'Shougo/vimproc.vim', {'do' : 'make'}
     Plug 'tpope/vim-obsession'
@@ -33,8 +34,9 @@ set background=dark     " Assume a dark background
     " Plug 'OmniSharp/omnisharp-vim', {'for': 'cs'}
     Plug 'eagletmt/ghcmod-vim', {'for': 'haskell'}
     Plug 'eagletmt/neco-ghc', {'for': 'haskell'}
-    Plug 'pangloss/vim-javascript', {'for': 'javascript'}
-    Plug 'mxw/vim-jsx', {'for': 'javascript'}
+    Plug 'pangloss/vim-javascript', {'for': ['javascript', 'javascript.jsx']}
+    Plug 'mxw/vim-jsx', {'for': ['javascript.jsx']}
+    Plug 'mattn/emmet-vim', {'for': ['html', 'css', 'javascript.jsx']}
 
     " Add plugins to runtimepath
     call plug#end()
@@ -82,8 +84,9 @@ set background=dark     " Assume a dark background
 " VIM UI {
 
     " colorscheme badwolf       " load a colorscheme
-    colorscheme onedark         " load a colorscheme
+    " colorscheme onedark         " load a colorscheme
     " colorscheme base16-chalk  " load a colorscheme
+    colorscheme gruvbox  " load a colorscheme
 
     " set tabpagemax=15         " only show 15 tabs
     set showmode                " display the current mode
@@ -186,6 +189,16 @@ set background=dark     " Assume a dark background
         autocmd FileType javascript set ts=2
         autocmd FileType javascript set sts=2
     " }
+    " JSX {
+        autocmd FileType javascript.jsx set sw=2
+        autocmd FileType javascript.jsx set ts=2
+        autocmd FileType javascript.jsx set sts=2
+    " }
+    " JSON {
+        autocmd FileType json set sw=2
+        autocmd FileType json set ts=2
+        autocmd FileType json set sts=2
+    " }
     " Haskell {
         autocmd FileType haskell set tabstop=8
         autocmd FileType haskell set expandtab
@@ -242,12 +255,15 @@ set background=dark     " Assume a dark background
     " }
     " UltiSnips {
         let g:UltiSnipsExpandTrigger="<c-l>"
-        let g:UltiSnipsJumpForwardTrigger="<c-l>"
-        let g:UltiSnipsJumpBackwardTrigger="<c-m>"
+        let g:UltiSnipsJumpForwardTrigger="<c-m>"
+        let g:UltiSnipsJumpBackwardTrigger="<c-n>"
+        let g:UltiSnipsSnippetDirectories=["UltiSnips", "mysnippets"]
+        let g:UltiSnipsEditSplit="vertical"
     " }
     " vim-airline {
         " let g:airline_theme='base16_chalk'
         let g:airline_theme='base16_pop'
+        " let g:airline_theme='gruvbox'
         set laststatus=2
 
         " Use the powerline fonts...make sure they are installed
@@ -300,6 +316,15 @@ set background=dark     " Assume a dark background
         vnoremap <Leader>a: :Tabularize /:<CR>
         nnoremap <Leader>a- :Tabularize /-<CR>
         vnoremap <Leader>a- :Tabularize /-<CR>
+    " }
+    " gruvbox {
+        " nnoremap <silent> [oh :call gruvbox#hls_show()<CR>
+        " nnoremap <silent> ]oh :call gruvbox#hls_hide()<CR>
+        " nnoremap <silent> coh :call gruvbox#hls_toggle()<CR>
+
+        " nnoremap * :let @/ = ""<CR>:call gruvbox#hls_show()<CR>*
+        " nnoremap / :let @/ = ""<CR>:call gruvbox#hls_show()<CR>/
+        " nnoremap ? :let @/ = ""<CR>:call gruvbox#hls_show()<CR>?
     " }
 
 " }

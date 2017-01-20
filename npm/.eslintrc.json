@@ -5,7 +5,7 @@
         "es6": true,
         "node": true
     },
-    "extends": "eslint:recommended",
+    "extends": ["eslint:recommended", "plugin:react/recommended"],
     "parserOptions": {
         "ecmaFeatures": {
             "experimentalObjectRestSpread": true,
@@ -27,11 +27,15 @@
         ],
         "quotes": [
             "error",
-            "single"
+            "single",
+            { "allowTemplateLiterals": true }
         ],
         "semi": [
             "error",
             "always"
+        ],
+        "no-console" : [
+            "noerror"
         ]
     }
 }
