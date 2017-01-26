@@ -1,6 +1,10 @@
 # ignore vim bundles
 vim/.vim/bundle/*
 
+# ignore tmux plugins and resurrect
+tmux/.tmux/plugins
+tmux/.tmux/resurrect
+
 # except
 vim/.vim/bundle/Vundle.vim
 

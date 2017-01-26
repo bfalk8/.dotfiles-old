@@ -1,0 +1,5 @@
+new -s SessionName -n dev
+# neww -n servers
+splitw -h -p 35 -t dev
+# selectw -t 1 
+selectp -t 0

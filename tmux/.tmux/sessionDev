@@ -1,0 +1,3 @@
+renamew dev
+splitw -h -p 35 -t dev
+selectp -t 0

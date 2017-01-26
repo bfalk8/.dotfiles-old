@@ -12,6 +12,7 @@
     ~/.zshrc: zsh/.zshrc
     ~/.oh-my-zsh/lib/alias.zsh: zsh/alias.zsh
     ~/.tmux.conf: tmux/.tmux.conf
+    ~/.tmux: tmux/.tmux
     ~/.config/i3/config: i3/config
     ~/.config/i3/conky-i3bar: i3/conky-i3bar
     ~/.config/i3/conky.rc: i3/conky.rc
