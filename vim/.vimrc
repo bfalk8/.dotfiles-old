@@ -37,6 +37,9 @@ set background=dark     " Assume a dark background
     Plug 'pangloss/vim-javascript', {'for': ['javascript', 'javascript.jsx']}
     Plug 'mxw/vim-jsx', {'for': ['javascript.jsx']}
     Plug 'mattn/emmet-vim', {'for': ['html', 'css', 'javascript.jsx']}
+    " Plug 'ryym/vim-riot', {'for': ['riot']}
+    " Plug 'nicklasos/vim-jsx-riot'
+
 
     " Add plugins to runtimepath
     call plug#end()
@@ -189,6 +192,11 @@ set background=dark     " Assume a dark background
         autocmd FileType javascript set ts=2
         autocmd FileType javascript set sts=2
     " }
+    " HTML {
+        autocmd FileType html set sw=2
+        autocmd FileType html set ts=2
+        autocmd FileType html set sts=2
+    " }
     " JSX {
         autocmd FileType javascript.jsx set sw=2
         autocmd FileType javascript.jsx set ts=2
@@ -212,6 +220,14 @@ set background=dark     " Assume a dark background
         " Disable haskell-vim omnifunc
         let g:haskellmode_completion_ghc = 1
         autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+    " }
+    " Riot {
+        au BufNewFile,BufRead *.tag setlocal ft=javascript.jsx
+        " autocmd FileType riot set sw=2
+        " autocmd FileType riot set ts=2
+        " autocmd FileType riot set sts=2
+        " au BufRead,BufNewFile *.tag :set filetype=html
+        " au BufNewFile,BufRead *.tag setlocal ft=javascript
     " }
 "}
 
