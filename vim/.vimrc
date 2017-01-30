@@ -37,8 +37,6 @@ set background=dark     " Assume a dark background
     Plug 'pangloss/vim-javascript', {'for': ['javascript', 'javascript.jsx']}
     Plug 'mxw/vim-jsx', {'for': ['javascript.jsx']}
     Plug 'mattn/emmet-vim', {'for': ['html', 'css', 'javascript.jsx']}
-    " Plug 'ryym/vim-riot', {'for': ['riot']}
-    " Plug 'nicklasos/vim-jsx-riot'
 
 
     " Add plugins to runtimepath
@@ -222,12 +220,11 @@ set background=dark     " Assume a dark background
         autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
     " }
     " Riot {
-        au BufNewFile,BufRead *.tag setlocal ft=javascript.jsx
+        " au BufNewFile,BufRead *.tag setlocal ft=javascript.jsx
+        au BufNewFile,BufRead *.tag setlocal ft=html
         " autocmd FileType riot set sw=2
         " autocmd FileType riot set ts=2
         " autocmd FileType riot set sts=2
-        " au BufRead,BufNewFile *.tag :set filetype=html
-        " au BufNewFile,BufRead *.tag setlocal ft=javascript
     " }
 "}
 
