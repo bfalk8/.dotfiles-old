@@ -34,7 +34,7 @@ set background=dark     " Assume a dark background
     " Plug 'OmniSharp/omnisharp-vim', {'for': 'cs'}
     Plug 'eagletmt/ghcmod-vim', {'for': 'haskell'}
     Plug 'eagletmt/neco-ghc', {'for': 'haskell'}
-    Plug 'pangloss/vim-javascript', {'for': ['javascript', 'javascript.jsx']}
+    Plug 'pangloss/vim-javascript', {'for': ['javascript', 'javascript.jsx', 'html']}
     Plug 'mxw/vim-jsx', {'for': ['javascript.jsx']}
     Plug 'mattn/emmet-vim', {'for': ['html', 'css', 'javascript.jsx']}
 
@@ -220,8 +220,8 @@ set background=dark     " Assume a dark background
         autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
     " }
     " Riot {
-        " au BufNewFile,BufRead *.tag setlocal ft=javascript.jsx
-        au BufNewFile,BufRead *.tag setlocal ft=html
+        au BufNewFile,BufRead *.tag setlocal ft=javascript.jsx
+        " au BufNewFile,BufRead *.tag setlocal ft=html
         " autocmd FileType riot set sw=2
         " autocmd FileType riot set ts=2
         " autocmd FileType riot set sts=2

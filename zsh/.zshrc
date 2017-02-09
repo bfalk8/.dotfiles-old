@@ -1,7 +1,8 @@
 # Created by newuser for 5.1.1
 
 export ZSH="$HOME/.oh-my-zsh";
-ZSH_THEME="clean"
+# ZSH_THEME="clean"
+ZSH_THEME="imp"
 plugins=(git ssh-agent)
 
 # set caps lock to escape key
