@@ -11,6 +11,7 @@
     ~/.vim: vim/.vim
     ~/.zshrc: zsh/.zshrc
     ~/.oh-my-zsh/lib/alias.zsh: zsh/alias.zsh
+    ~/.oh-my-zsh/custom/themes/brandon.zsh-theme: zsh/brandon.zsh-theme
     ~/.tmux.conf: tmux/.tmux.conf
     ~/.tmux: tmux/.tmux
     ~/.config/i3/config: i3/config

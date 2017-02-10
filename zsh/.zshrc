@@ -2,7 +2,7 @@
 
 export ZSH="$HOME/.oh-my-zsh";
 # ZSH_THEME="clean"
-ZSH_THEME="imp"
+ZSH_THEME="brandon"
 plugins=(git ssh-agent)
 
 # set caps lock to escape key
