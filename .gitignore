@@ -9,3 +9,4 @@ tmux/.tmux/resurrect
 vim/.vim/bundle/Vundle.vim
 
 vim/.vim/plugged/*
+vim/.vim/plugged-unmanaged/*

@@ -37,6 +37,7 @@ set background=dark     " Assume a dark background
     Plug 'pangloss/vim-javascript', {'for': ['javascript', 'javascript.jsx', 'html']}
     Plug 'mxw/vim-jsx', {'for': ['javascript.jsx']}
     Plug 'mattn/emmet-vim', {'for': ['html', 'css', 'javascript.jsx']}
+    Plug '~/.vim/plugged-unmanaged/eclim-vim', {'on': 'EclimStart'}
 
 
     " Add plugins to runtimepath
@@ -226,6 +227,11 @@ set background=dark     " Assume a dark background
         " autocmd FileType riot set ts=2
         " autocmd FileType riot set sts=2
     " }
+    " Java {
+        autocmd FileType java set sw=4
+        autocmd FileType java set ts=4
+        autocmd FileType java set sts=4
+    " }
 "}
 
 " PLUGIN SETTINGS {
@@ -265,6 +271,7 @@ set background=dark     " Assume a dark background
         " Goto definition with F3
         map <F3> :YcmCompleter GoTo<CR>
         " let g:ycm_semantic_triggers = {'haskell' : ['.']}
+        let g:EclimCompletionMethod = 'omnifunc'    " For java completion with eclim
     " }
     " UltiSnips {
         let g:UltiSnipsExpandTrigger="<c-l>"
@@ -338,6 +345,10 @@ set background=dark     " Assume a dark background
         " nnoremap * :let @/ = ""<CR>:call gruvbox#hls_show()<CR>*
         " nnoremap / :let @/ = ""<CR>:call gruvbox#hls_show()<CR>/
         " nnoremap ? :let @/ = ""<CR>:call gruvbox#hls_show()<CR>?
+    " }
+    " eclim {
+        " let g:EclimDisabled = 1
+        " command EclimStart so $HOME/.vim/plugin/eclim.vim
     " }
 
 " }
